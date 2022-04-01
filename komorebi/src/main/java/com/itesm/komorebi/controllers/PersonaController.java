@@ -5,6 +5,8 @@ import com.itesm.komorebi.service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/v1/persona")
 public class PersonaController {
@@ -29,5 +31,14 @@ public class PersonaController {
     public Persona cumplirAnios(@RequestBody Persona persona){
         personaService.cumplirAnios(persona);
         return persona;
+    }
+
+    @GetMapping("/todos")
+    public List<Persona> obtenerTodos(){
+        return personaService.getAll();
+    }
+    @GetMapping("/obtener/{id}")
+    public Persona findById(@PathVariable("id") int id){
+        return personaService.getById(id);
     }
 }
