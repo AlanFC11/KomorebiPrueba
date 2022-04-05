@@ -15,4 +15,5 @@ public class RecConfigurationService {
     public RecConfiguration getConfig(){
         return recConfigurationRepository.find();
     }
+    public RecConfiguration updateMaxDuration(int maxDur){return  recConfigurationRepository.updateMaxDuration(maxDur);}
 }

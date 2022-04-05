@@ -16,4 +16,15 @@ public class RecConfigurationRepository {
         rc1.setEncryption(true);
         return rc1;
     }
+    public RecConfiguration updateMaxDuration(int maxDur){
+        RecConfiguration rc1 = new RecConfiguration();
+        rc1.setMinDuration(0);
+        rc1.setResolution(720);
+        rc1.setMaxDuration(800);
+        rc1.setAllowSharing(true);
+        rc1.setEncryption(true);
+
+        rc1.setMaxDuration(maxDur);
+        return rc1;
+    }
 }

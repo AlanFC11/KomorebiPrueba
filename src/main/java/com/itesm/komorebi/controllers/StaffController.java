@@ -35,6 +35,9 @@ public class StaffController {
         System.out.println(staff.getRole());
         return staff;
     }
+    @GetMapping("/update/{id}/{lastName}")
+    public Staff updateLastName(@PathVariable("ïd") int id, @PathVariable("lastName") String lastName)
+    {return staffService.updateLastName(id, lastName);}
     @GetMapping("/todos")
     public List<Staff> obtenerTodos(){
         return staffService.getAll();

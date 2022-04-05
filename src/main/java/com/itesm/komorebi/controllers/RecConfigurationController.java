@@ -2,6 +2,7 @@ package com.itesm.komorebi.controllers;
 
 import com.itesm.komorebi.models.Persona;
 import com.itesm.komorebi.models.RecConfiguration;
+import com.itesm.komorebi.models.Staff;
 import com.itesm.komorebi.service.RecConfigurationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -32,6 +33,10 @@ public class RecConfigurationController {
         System.out.println(recConfiguration.getResolution());
         return recConfiguration;
     }
+    @GetMapping("/update/{maxDuration}")
+    public RecConfiguration updateLastName(@PathVariable("maxDuration") int maxDuration)
+    {return recConfigurationService.updateMaxDuration(maxDuration);}
+
     @GetMapping("/todos")
     public RecConfiguration obtenerTodos(){
         return recConfigurationService.getConfig();

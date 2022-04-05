@@ -29,6 +29,9 @@ public class TagController {
         System.out.println(tag.getName());
         return tag;
     }
+    @GetMapping("/update/{id}/{name}")
+    public Tag updateName(@PathVariable("ïd") int id, @PathVariable("name") String name)
+    {return tagService.updateName(id, name);}
 
     @GetMapping("/todos")
     public List<Tag> obtenerTodos(){

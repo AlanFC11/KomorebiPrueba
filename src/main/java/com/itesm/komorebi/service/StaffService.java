@@ -18,4 +18,5 @@ public class StaffService {
     public Staff getById(int id){
         return staffRepository.findById(id);
     }
+    public Staff updateLastName(int id, String newLast){return staffRepository.updateLastName(id, newLast);}
 }

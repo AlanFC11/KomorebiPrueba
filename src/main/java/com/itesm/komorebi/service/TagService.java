@@ -18,4 +18,5 @@ public class TagService {
     public Tag getById(int id){
         return tagRepository.findById(id);
     }
+    public Tag updateName(int id, String newName){return tagRepository.updateName(id, newName);}
 }
